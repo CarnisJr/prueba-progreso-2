@@ -48,16 +48,17 @@ int main(void){
     if((porcentajeFrutaMala + procentajeFrutaPasada) >= 30.0){
 
         printf("No compres el lote\n\n");
-    }else if((porcentajeFrutaMala + procentajeFrutaPasada) > 15.0 && (porcentajeFrutaMala + procentajeFrutaPasada) < 30.0){
-
-        precioLoteDescuento = precioLote * 0.70;
-        printf("Se compra el lote con al 70%c del precio orginal: %.2f\n\n", '%', precioLoteDescuento);
-    }else if(porcentajeFrutaMala < 5.0 && procentajeFrutaPasada > 5.0){
+    }
+    if(porcentajeFrutaMala < 5.0 && procentajeFrutaPasada > 5.0){
 
         precioLoteDescuento = precioLote * 0.80;
         printf("Se compra el lote al 80%c del precio original: %.2f\n\n", '%', precioLoteDescuento);
+    }else   if((porcentajeFrutaMala + procentajeFrutaPasada) > 15.0 && (porcentajeFrutaMala + procentajeFrutaPasada) < 30.0){
+
+        precioLoteDescuento = precioLote * 0.70;
+        printf("Se compra el lote con al 70%c del precio orginal: %.2f\n\n", '%', precioLoteDescuento);
     }else{
-        printf("Compra el lote al precio original: %.2f", precioLote);
+        printf("Compra el lote al precio original: %.2f\n\n", precioLote);
     }
     
     system("pause");
